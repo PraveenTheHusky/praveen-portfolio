@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Optional: Add a custom background to verify CSS is loading */
+body {
+  @apply bg-[#020617];
+}
