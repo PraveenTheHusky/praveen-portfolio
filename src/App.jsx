@@ -125,21 +125,21 @@ const App = () => {
       major: "IT Project Management",
       university: "New England College",
       location: "Henniker, NH",
-      year: "Current — 2026"
+      year: "Expected 2026"
     },
     {
       degree: "Master of Professional Science",
       major: "Artificial Intelligence",
       university: "Northeastern University",
       location: "Boston, MA",
-      year: "2021"
+      year: "2019 — 2021"
     },
     {
       degree: "Bachelor of Technology",
       major: "Computer Engineering",
       university: "Mumbai University",
       location: "India",
-      year: "2019"
+      year: "2015 — 2019"
     }
   ];
 
