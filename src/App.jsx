@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { track } from '@vercel/analytics';
 import {
   Linkedin, Mail, Database, Cloud, Code2, Cpu,
   Briefcase, Menu, X, MapPin,
@@ -278,11 +280,23 @@ const App = () => {
               Architecting governed, SLA-driven platforms across Azure & AWS. Specialist in Databricks Lakehouse architecture and high-throughput GenAI pipelines.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-6 pt-4">
-              <a href="https://www.linkedin.com/in/praveenpdy/" target="_blank" rel="noopener noreferrer" className="group relative p-5 bg-slate-900 rounded-2xl overflow-hidden active:scale-95 transition-all hover:bg-blue-600">
+            <div className="flex flex-row flex-wrap gap-4 pt-4">
+              <a
+                href="https://www.linkedin.com/in/praveenpdy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('LinkedIn Click', { location: 'hero' })}
+                className="group relative p-5 bg-slate-900 rounded-2xl overflow-hidden active:scale-95 transition-all hover:bg-blue-600"
+              >
                 <Linkedin size={24} className="text-white" />
               </a>
-              <a href="https://github.com/PraveenTheHusky" target="_blank" rel="noopener noreferrer" className="group relative p-5 bg-slate-900 rounded-2xl overflow-hidden active:scale-95 transition-all hover:bg-slate-700">
+              <a
+                href="https://github.com/PraveenTheHusky"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('GitHub Click', { location: 'hero' })}
+                className="group relative p-5 bg-slate-900 rounded-2xl overflow-hidden active:scale-95 transition-all hover:bg-slate-700"
+              >
                 <Github size={24} className="text-white" />
               </a>
               <button onClick={() => scrollTo('experience')} className="px-12 py-6 bg-white border border-slate-200 rounded-3xl font-bold text-slate-700 uppercase tracking-[0.2em] text-[11px] hover:bg-slate-50 transition-all active:scale-95">
@@ -337,6 +351,7 @@ const App = () => {
               href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track('Resume View', { action: 'view' })}
               className="group px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center space-x-3"
             >
               <Eye size={20} className="group-hover:scale-110 transition-transform" />
@@ -345,6 +360,7 @@ const App = () => {
             <a
               href="/Resume.pdf"
               download="Praveen_Pandey_Resume.pdf"
+              onClick={() => track('Resume Download', { action: 'download' })}
               className="group px-10 py-5 border-2 border-blue-600 text-blue-600 rounded-2xl font-bold text-sm uppercase tracking-wider hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center space-x-3"
             >
               <Download size={20} className="group-hover:scale-110 transition-transform" />
@@ -575,6 +591,7 @@ const App = () => {
           © 2025 / Praveen Pandey / Senior Data Engineer
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 };
